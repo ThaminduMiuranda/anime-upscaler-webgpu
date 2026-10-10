@@ -78,6 +78,27 @@ Runs on any `<video>` across the open web — attaches automatically, skips DRM 
 
 ---
 
+## 📦 Run it locally (no Chrome Web Store required)
+
+Chrome, Edge, Brave, and other Chromium-based browsers can load this extension directly
+from source — the Web Store is never required.
+
+| Step | What to do |
+|---|---|
+| **1. Get the code** | `git clone https://github.com/ThaminduMiuranda/anime-upscaler-webgpu.git` — or download the [ZIP](https://github.com/ThaminduMiuranda/anime-upscaler-webgpu/archive/refs/heads/main.zip) and extract it |
+| **2. Open the extensions page** | Visit `chrome://extensions` (or `edge://extensions`, `brave://extensions`) |
+| **3. Turn on Developer mode** | Flip the **Developer mode** switch in the top-right corner |
+| **4. Load unpacked** | Click **Load unpacked** and select the project folder (the one containing `manifest.json`) |
+| **5. Pin it** | Click the puzzle-piece icon in the toolbar → pin **Anime Upscaler** for quick access |
+| **6. Done** | Play any video — the overlay attaches automatically. Toggle it anytime with `Alt+Shift+U` |
+
+**Updating:** pull the latest changes (`git pull`), then click the ↻ reload icon on the
+extension's card at `chrome://extensions` — no reinstall needed.
+
+**Removing:** click **Remove** on the extension's card at `chrome://extensions` at any time.
+
+---
+
 ## ⌨️ Keyboard Shortcuts
 
 | Shortcut | Action |
