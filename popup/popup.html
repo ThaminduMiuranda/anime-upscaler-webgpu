@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anime Upscaler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="../icons/icon-48.png" alt="" width="30" height="30">
+      <div>
+        <h1>Anime Upscaler</h1>
+        <p class="sub">Real-time WebGPU enhancement</p>
+      </div>
+    </div>
+    <label class="switch" title="Enable / disable (Alt+Shift+U)">
+      <input type="checkbox" id="enabled" role="switch" aria-label="Enable upscaling">
+      <span class="track"><span class="thumb"></span></span>
+    </label>
+  </header>
+
+  <section class="status" id="status" aria-live="polite">
+    <span class="dot" id="statusDot"></span>
+    <div>
+      <div class="status-main" id="statusMain">Checking this tab…</div>
+      <div class="status-sub" id="statusSub"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Preset</h2>
+    <div class="segmented" role="radiogroup" aria-label="Preset" id="presets">
+      <button type="button" role="radio" data-preset="fast">Fast</button>
+      <button type="button" role="radio" data-preset="balanced">Balanced</button>
+      <button type="button" role="radio" data-preset="quality">Quality</button>
+      <button type="button" role="radio" data-preset="custom" tabindex="-1" disabled>Custom</button>
+    </div>
+  </section>
+
+  <section class="sliders">
+    <div class="slider">
+      <div class="row"><label for="denoise">Denoise</label><output for="denoise" id="denoise-out"></output></div>
+      <input type="range" id="denoise" min="0" max="1" step="0.05">
+    </div>
+    <div class="slider">
+      <div class="row"><label for="edgeAA">Edge smoothing</label><output for="edgeAA" id="edgeAA-out"></output></div>
+      <input type="range" id="edgeAA" min="0" max="1" step="0.05">
+    </div>
+    <div class="slider">
+      <div class="row"><label for="warp">Line tightening</label><output for="warp" id="warp-out"></output></div>
+      <input type="range" id="warp" min="0" max="1" step="0.05">
+    </div>
+    <div class="slider">
+      <div class="row"><label for="lineDarken">Line darkening</label><output for="lineDarken" id="lineDarken-out"></output></div>
+      <input type="range" id="lineDarken" min="0" max="1" step="0.05">
+    </div>
+    <div class="slider">
+      <div class="row"><label for="sharpen">Sharpen</label><output for="sharpen" id="sharpen-out"></output></div>
+      <input type="range" id="sharpen" min="0" max="1" step="0.05">
+    </div>
+  </section>
+
+  <section class="options">
+    <label class="check"><input type="checkbox" id="compare"> Split-screen compare <kbd>Alt+Shift+C</kbd></label>
+    <label class="check"><input type="checkbox" id="showStats"> Show stats overlay</label>
+    <div class="row">
+      <label for="maxOutput">Max output resolution</label>
+      <select id="maxOutput">
+        <option value="1080">1080p</option>
+        <option value="1440">1440p</option>
+        <option value="2160">4K (2160p)</option>
+      </select>
+    </div>
+  </section>
+
+  <footer>
+    <button type="button" id="reset" class="link">Reset to defaults</button>
+    <span><kbd>Alt+Shift+U</kbd> on/off</span>
+  </footer>
+
+  <script src="../src/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

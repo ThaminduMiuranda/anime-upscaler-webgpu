@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Anime Upscaler (WebGPU)",
+  "version": "1.0.0",
+  "description": "Real-time GPU upscaling and line-art enhancement for anime videos playing in the browser, powered by WebGPU.",
+  "minimum_chrome_version": "121",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Anime Upscaler",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/settings.js", "src/shaders.js", "src/renderer.js", "src/content.js"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "commands": {
+    "toggle-upscaler": {
+      "suggested_key": { "default": "Alt+Shift+U" },
+      "description": "Toggle upscaling on/off"
+    },
+    "toggle-compare": {
+      "suggested_key": { "default": "Alt+Shift+C" },
+      "description": "Toggle split-screen before/after compare"
+    }
+  }
+}
