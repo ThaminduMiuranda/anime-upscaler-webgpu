@@ -1,0 +1,50 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1535"/>
+      <stop offset="100%" stop-color="#2a1a3d"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8a6bff"/>
+      <stop offset="100%" stop-color="#ff5ca8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#8a6bff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8a6bff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="320" rx="28" fill="url(#bg)"/>
+  <circle cx="980" cy="70" r="260" fill="url(#glow)"/>
+  <circle cx="190" cy="260" r="220" fill="url(#glow)"/>
+
+  <!-- icon badge -->
+  <g transform="translate(90,100)">
+    <rect x="0" y="0" width="120" height="120" rx="28" fill="url(#brand)"/>
+    <g stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <polyline points="26,78 60,50 94,78"/>
+      <polyline points="26,96 60,68 94,96"/>
+    </g>
+    <path d="M94 20 L100 34 L114 40 L100 46 L94 60 L88 46 L74 40 L88 34 Z" fill="#ffffff" fill-opacity="0.92"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="250" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="56" font-weight="700" fill="#f5f3ff">
+    Anime Upscaler
+  </text>
+  <text x="252" y="190" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="500" fill="#b9aee8">
+    Real-time WebGPU upscaling &amp; line-art enhancement, right in your browser
+  </text>
+
+  <!-- pill tags -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600">
+    <rect x="252" y="220" width="104" height="34" rx="17" fill="#ffffff" fill-opacity="0.08"/>
+    <text x="304" y="242" text-anchor="middle" fill="#dcd4ff">WebGPU</text>
+
+    <rect x="368" y="220" width="130" height="34" rx="17" fill="#ffffff" fill-opacity="0.08"/>
+    <text x="433" y="242" text-anchor="middle" fill="#dcd4ff">Manifest V3</text>
+
+    <rect x="510" y="220" width="104" height="34" rx="17" fill="#ffffff" fill-opacity="0.08"/>
+    <text x="562" y="242" text-anchor="middle" fill="#dcd4ff">MIT</text>
+  </g>
+</svg>
