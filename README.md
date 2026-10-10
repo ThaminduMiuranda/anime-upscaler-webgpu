@@ -152,6 +152,14 @@ python tools/generate_icons.py
 
 ---
 
+## 🤝 Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for
+the branching convention, development workflow, and PR guidelines before
+opening one. This project also follows the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+---
+
 <div align="center">
 
 Licensed under the [MIT License](LICENSE).
