@@ -1,6 +1,6 @@
-# Contributing to Anime Upscaler
+# Contributing to Video Upscaler
 
-Thanks for your interest in improving Anime Upscaler! This project is a small,
+Thanks for your interest in improving Video Upscaler! This project is a small,
 dependency-free Chrome extension (vanilla JS + WGSL, no build step), so the
 workflow below is intentionally lightweight.
 
@@ -10,12 +10,12 @@ By participating in this project, you agree to abide by the
 ## 1. Fork and clone
 
 1. Fork the repository by clicking **Fork** at the top of the
-   [GitHub page](https://github.com/ThaminduMiuranda/anime-upscaler-webgpu).
+   [GitHub page](https://github.com/ThaminduMiuranda/video-upscaler-webgpu).
 2. Clone your fork locally:
 
    ```bash
-   git clone https://github.com/<your-username>/anime-upscaler-webgpu.git
-   cd anime-upscaler-webgpu
+   git clone https://github.com/<your-username>/video-upscaler-webgpu.git
+   cd video-upscaler-webgpu
    ```
 3. Load it as an unpacked extension so you can test changes live — see
    [Run it locally](README.md#-run-it-locally-no-chrome-web-store-required)
@@ -105,6 +105,6 @@ docs(readme): correct keyboard shortcut for compare mode
 
 ## Reporting bugs or suggesting features
 
-Please open a [GitHub issue](https://github.com/ThaminduMiuranda/anime-upscaler-webgpu/issues)
+Please open a [GitHub issue](https://github.com/ThaminduMiuranda/video-upscaler-webgpu/issues)
 with steps to reproduce (for bugs) or a clear description of the use case
 (for feature requests), including your browser version and GPU where relevant.

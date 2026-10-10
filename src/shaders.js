@@ -8,7 +8,7 @@
 //   5. present  (output res)  halo-free adaptive sharpen -> canvas  (+ split-screen compare)
 // Passes 3-4 are skipped when both warp and lineDarken are 0.
 (() => {
-  const NS = (globalThis.AnimeUpscaler ||= {});
+  const NS = (globalThis.VideoUpscaler ||= {});
   if (NS.SHADERS) return;
 
   const common = /* wgsl */ `

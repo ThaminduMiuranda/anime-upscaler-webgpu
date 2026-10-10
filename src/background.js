@@ -1,7 +1,7 @@
 // Service worker: keyboard shortcuts + toolbar badge. Holds no state in memory.
 importScripts('settings.js');
 
-const { DEFAULTS, normalizeSettings } = globalThis.AnimeUpscaler;
+const { DEFAULTS, normalizeSettings } = globalThis.VideoUpscaler;
 
 async function getSettings() {
   const { settings } = await chrome.storage.local.get('settings');

@@ -30,10 +30,10 @@
 
   <!-- wordmark -->
   <text x="250" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="56" font-weight="700" fill="#f5f3ff">
-    Anime Upscaler
+    Video Upscaler
   </text>
   <text x="252" y="190" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="500" fill="#b9aee8">
-    Real-time WebGPU upscaling &amp; line-art enhancement, right in your browser
+    Real-time WebGPU upscaling &amp; sharpening, right in your browser
   </text>
 
   <!-- pill tags -->

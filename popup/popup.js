@@ -1,4 +1,4 @@
-const NS = globalThis.AnimeUpscaler;
+const NS = globalThis.VideoUpscaler;
 const $ = (id) => document.getElementById(id);
 
 let settings = NS.normalizeSettings();

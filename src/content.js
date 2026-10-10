@@ -1,11 +1,11 @@
 // Content script: finds <video> elements, overlays a WebGPU canvas on each and renders
 // upscaled frames in sync with the video (requestVideoFrameCallback).
 (() => {
-  const NS = (globalThis.AnimeUpscaler ||= {});
+  const NS = (globalThis.VideoUpscaler ||= {});
   if (NS.contentLoaded) return;
   NS.contentLoaded = true;
 
-  const LOG = '[Anime Upscaler]';
+  const LOG = '[Video Upscaler]';
   const MIN_W = 240; // ignore thumbnails / hover previews (CSS px)
   const MIN_H = 135;
   const GPU_RETRY_MS = 15000;
@@ -53,7 +53,7 @@
 
       // Wrapper covers the video's element box and clips (needed for object-fit: cover).
       const wrap = (this.wrapper = document.createElement('div'));
-      wrap.setAttribute('data-anime-upscaler', '');
+      wrap.setAttribute('data-video-upscaler', '');
       wrap.style.cssText = [
         'position:absolute', 'left:0', 'top:0', 'width:0', 'height:0', 'margin:0', 'padding:0',
         'border:0', 'overflow:hidden', 'pointer-events:none', 'background:transparent',

@@ -1,6 +1,6 @@
 // WebGPU device management + per-video renderer.
 (() => {
-  const NS = (globalThis.AnimeUpscaler ||= {});
+  const NS = (globalThis.VideoUpscaler ||= {});
   if (NS.Renderer) return;
 
   const PASS_NAMES = ['prep', 'upscale', 'edges', 'warp', 'present'];
@@ -15,7 +15,7 @@
   }
 
   async function buildPipeline(device, name, code, format) {
-    const label = `anime-upscaler:${name}`;
+    const label = `video-upscaler:${name}`;
     const module = device.createShaderModule({ label, code: NS.SHADERS.common + code });
     const info = await module.getCompilationInfo();
     const errors = info.messages.filter((m) => m.type === 'error');
@@ -36,7 +36,7 @@
     if (!navigator.gpu) throw new Error('WebGPU is not available (navigator.gpu is missing)');
     const adapter = await navigator.gpu.requestAdapter({ powerPreference: 'high-performance' });
     if (!adapter) throw new Error('No WebGPU adapter found');
-    const device = await adapter.requestDevice({ label: 'anime-upscaler' });
+    const device = await adapter.requestDevice({ label: 'video-upscaler' });
     const canvasFormat = navigator.gpu.getPreferredCanvasFormat();
 
     const gpu = {
@@ -50,14 +50,14 @@
     };
 
     device.addEventListener('uncapturederror', (ev) => {
-      console.warn('[Anime Upscaler] GPU error:', ev.error?.message);
+      console.warn('[Video Upscaler] GPU error:', ev.error?.message);
     });
 
     (async () => {
       const info = await device.lost;
       gpu.lost = true;
       if (gpuPromise) gpuPromise = null;
-      console.warn('[Anime Upscaler] GPU device lost:', info?.message);
+      console.warn('[Video Upscaler] GPU device lost:', info?.message);
       NS.onDeviceLost?.(info);
     })();
 
@@ -102,7 +102,7 @@
       if (!this.ctx) throw new Error('Could not create a WebGPU canvas context');
       this.ctx.configure({ device: gpu.device, format: gpu.canvasFormat, alphaMode: 'opaque' });
       this.ubuf = gpu.device.createBuffer({
-        label: 'anime-upscaler:params',
+        label: 'video-upscaler:params',
         size: UNIFORM_FLOATS * 4,
         usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
       });
@@ -128,7 +128,7 @@
       const { device, pipelines: P, sampler } = this.gpu;
       const usage = GPUTextureUsage.RENDER_ATTACHMENT | GPUTextureUsage.TEXTURE_BINDING;
       const mk = (w, h, format, label) =>
-        device.createTexture({ label: `anime-upscaler:${label}`, size: [w, h], format, usage });
+        device.createTexture({ label: `video-upscaler:${label}`, size: [w, h], format, usage });
 
       const t = {
         src: mk(vw, vh, 'rgba16float', 'src'),
@@ -139,7 +139,7 @@
 
       if (this.useCopyFallback) {
         t.videoCopy = device.createTexture({
-          label: 'anime-upscaler:video-copy',
+          label: 'video-upscaler:video-copy',
           size: [vw, vh],
           format: 'rgba8unorm',
           usage: GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST | GPUTextureUsage.RENDER_ATTACHMENT,
@@ -207,7 +207,7 @@
         }
       } catch (err) {
         if (!this.useCopyFallback && (err.name === 'OperationError' || err.name === 'DOMException') && !this.gpu.adapterName.toLowerCase().includes('swiftshader')) {
-          console.warn('[Anime Upscaler] importExternalTexture failed, falling back to ImageBitmap proxy:', err);
+          console.warn('[Video Upscaler] importExternalTexture failed, falling back to ImageBitmap proxy:', err);
           this.useCopyFallback = true;
           this.sizeKey = ''; // Force target recreation
           this.ensureTargets(vw, vh, ow, oh);
@@ -228,7 +228,7 @@
 
       const u = { buffer: this.ubuf };
       const v = this.views;
-      const enc = device.createCommandEncoder({ label: 'anime-upscaler:frame' });
+      const enc = device.createCommandEncoder({ label: 'video-upscaler:frame' });
 
       Renderer.pass(enc, pipelines.prep, this.bindGroup(pipelines.prep, [u, videoSourceResource]), v.src);
       Renderer.pass(enc, pipelines.upscale, this.cachedGroups.upscale, v.up);

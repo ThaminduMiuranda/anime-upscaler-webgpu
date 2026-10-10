@@ -1,12 +1,12 @@
 // Shared settings/presets. Loaded by the content scripts, the popup and the service worker.
 (() => {
-  const NS = (globalThis.AnimeUpscaler ||= {});
+  const NS = (globalThis.VideoUpscaler ||= {});
   if (NS.DEFAULTS) return;
 
   // Strength values are all 0..1.
   //  denoise    – edge-preserving bilateral filter on the source (removes compression noise / banding)
   //  edgeAA     – edge-directed smoothing during upscale (removes jaggies / stair-stepping on lines)
-  //  warp       – warp-sharpening: pulls edge transitions tighter so line-art looks crisp
+  //  warp       – warp-sharpening: pulls edge transitions tighter so edges/outlines look crisp
   //  lineDarken – darkens thin dark lines (outlines) slightly
   //  sharpen    – final halo-free adaptive sharpening at output resolution
   const PRESETS = {

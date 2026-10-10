@@ -1,17 +1,17 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Anime Upscaler — real-time WebGPU upscaling and line-art enhancement" width="100%">
+<img src="assets/banner.svg" alt="Video Upscaler — real-time WebGPU upscaling and sharpening" width="100%">
 
 <br>
 
-[![License: MIT](https://img.shields.io/github/license/ThaminduMiuranda/anime-upscaler-webgpu?style=flat-square&color=6b4cff)](LICENSE)
+[![License: MIT](https://img.shields.io/github/license/ThaminduMiuranda/video-upscaler-webgpu?style=flat-square&color=6b4cff)](LICENSE)
 ![Manifest V3](https://img.shields.io/badge/manifest-v3-6b4cff?style=flat-square)
 ![WebGPU](https://img.shields.io/badge/powered%20by-WebGPU-ff5ca8?style=flat-square)
 ![Chrome](https://img.shields.io/badge/chrome-121%2B-6b4cff?style=flat-square&logo=googlechrome&logoColor=white)
-[![Last commit](https://img.shields.io/github/last-commit/ThaminduMiuranda/anime-upscaler-webgpu?style=flat-square&color=ff5ca8)](https://github.com/ThaminduMiuranda/anime-upscaler-webgpu/commits/main)
-[![Stars](https://img.shields.io/github/stars/ThaminduMiuranda/anime-upscaler-webgpu?style=flat-square&color=6b4cff)](https://github.com/ThaminduMiuranda/anime-upscaler-webgpu/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/ThaminduMiuranda/video-upscaler-webgpu?style=flat-square&color=ff5ca8)](https://github.com/ThaminduMiuranda/video-upscaler-webgpu/commits/main)
+[![Stars](https://img.shields.io/github/stars/ThaminduMiuranda/video-upscaler-webgpu?style=flat-square&color=6b4cff)](https://github.com/ThaminduMiuranda/video-upscaler-webgpu/stargazers)
 
-**Upscales and sharpens line art on any `<video>` element, live, entirely on your GPU — no server, no uploads.**
+**Upscales and sharpens any `<video>` element on the web, live, entirely on your GPU — no server, no uploads.**
 
 </div>
 
@@ -68,7 +68,7 @@ Runs on any `<video>` across the open web — attaches automatically, skips DRM 
 
 | | |
 |---|---|
-| **1. Clone** | `git clone https://github.com/ThaminduMiuranda/anime-upscaler-webgpu.git` |
+| **1. Clone** | `git clone https://github.com/ThaminduMiuranda/video-upscaler-webgpu.git` |
 | **2. Open extensions** | Go to `chrome://extensions` |
 | **3. Enable Dev Mode** | Toggle **Developer mode** (top right) |
 | **4. Load unpacked** | Click **Load unpacked** → select the cloned folder |
@@ -85,11 +85,11 @@ from source — the Web Store is never required.
 
 | Step | What to do |
 |---|---|
-| **1. Get the code** | `git clone https://github.com/ThaminduMiuranda/anime-upscaler-webgpu.git` — or download the [ZIP](https://github.com/ThaminduMiuranda/anime-upscaler-webgpu/archive/refs/heads/main.zip) and extract it |
+| **1. Get the code** | `git clone https://github.com/ThaminduMiuranda/video-upscaler-webgpu.git` — or download the [ZIP](https://github.com/ThaminduMiuranda/video-upscaler-webgpu/archive/refs/heads/main.zip) and extract it |
 | **2. Open the extensions page** | Visit `chrome://extensions` (or `edge://extensions`, `brave://extensions`) |
 | **3. Turn on Developer mode** | Flip the **Developer mode** switch in the top-right corner |
 | **4. Load unpacked** | Click **Load unpacked** and select the project folder (the one containing `manifest.json`) |
-| **5. Pin it** | Click the puzzle-piece icon in the toolbar → pin **Anime Upscaler** for quick access |
+| **5. Pin it** | Click the puzzle-piece icon in the toolbar → pin **Video Upscaler** for quick access |
 | **6. Done** | Play any video — the overlay attaches automatically. Toggle it anytime with `Alt+Shift+U` |
 
 **Updating:** pull the latest changes (`git pull`), then click the ↻ reload icon on the
